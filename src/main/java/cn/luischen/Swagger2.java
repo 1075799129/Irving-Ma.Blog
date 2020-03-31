@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Swagger2 配置
- * Created by Donghua.Chen on 2018/4/20.
+ * Created by Irving Ma on 2020/03/31.
  */
 @Configuration
 @EnableSwagger2
@@ -36,9 +36,9 @@ public class Swagger2 {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Luis Site Swagger Restful API")
-                .description("更多Spring Boot相关文章请关注：https://luischen.com/")
-                .termsOfServiceUrl("https://luischen.com/")
-                .contact("Luis chen")
+                .description("更多Spring Boot相关文章请关注：https://www.github.com/")
+                .termsOfServiceUrl("https://localhost:9999/")
+                .contact("Irving Ma")
                 .version("1.0")
                 .build();
     }
