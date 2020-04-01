@@ -14,7 +14,7 @@ spring:
           #基本属性
           url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
           username: root
-          password: Irving0405*
+          password: root
           #配置初始化大小/最小/最大
           initial-size: 1
           min-idle: 1
@@ -50,7 +50,7 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: cn.luischen.model
+  type-aliases-package: cn.irving.model
 
 
 #pagehelper
@@ -63,14 +63,14 @@ pagehelper:
 
 logging:
   level:
-    cn.luischen.dao : ALL
+    cn.irving.dao : ALL
 
 swagger:
   show: true
 
 qiniu:
-  accesskey: ""
-  serectkey: ""
-  bucket: ""
+  accesskey: "WL_9rMzr7UyS_lc34ikRfKJyE5NaSaVrxTuRaA04"
+  serectkey: "EEmMtnK0WbScGHNxuUIkEn6GOAySrapQnF77FsH2"
+  bucket: "irvingmablog"
   cdn:
     url: ""
