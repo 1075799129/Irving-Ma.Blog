@@ -410,7 +410,7 @@ public class TaleUtils {
     }
 
     public static String getFileKey(String name) {
-        String prefix = "/upload/" + DateKit.dateFormat(new Date(), "yyyy/MM");
+        String prefix = "/irvingmablog/" + DateKit.dateFormat(new Date(), "yyyy/MM");
         if (!new File(AttAchController.CLASSPATH + prefix).exists()) {
             new File(AttAchController.CLASSPATH + prefix).mkdirs();
         }
