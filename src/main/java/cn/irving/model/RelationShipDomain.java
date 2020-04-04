@@ -2,7 +2,7 @@ package cn.irving.model;
 
 /**
  * 文章关联信息表
- * Created by Donghua.Chen on 2018/4/30.
+ * Created by Irving on 2018/4/30.
  */
 public class RelationShipDomain {
 

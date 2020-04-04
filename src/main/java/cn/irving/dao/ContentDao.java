@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * 文章持久层
- * Created by Donghua.Chen on 2018/4/29.
+ * Created by Irving on 2018/4/29.
  */
 @Mapper
 public interface ContentDao {

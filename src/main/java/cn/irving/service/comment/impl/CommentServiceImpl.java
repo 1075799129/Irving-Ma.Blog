@@ -25,7 +25,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 评论实现类
- * Created by Donghua.Chen on 2018/4/29.
+ * Created by Irving on 2018/4/29.
  */
 @Service
 public class CommentServiceImpl implements CommentService {
@@ -56,7 +56,6 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     @Transactional
-    @CacheEvict(value="commentCache",allEntries=true)
     public void addComment(CommentDomain comments) {
         String msg = null;
         if (null == comments) {
@@ -100,7 +99,6 @@ public class CommentServiceImpl implements CommentService {
 
     @Transactional
     @Override
-    @CacheEvict(value="commentCache",allEntries=true)
     public void deleteComment(Integer coid) {
         if (null == coid)
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
@@ -133,7 +131,6 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    @CacheEvict(value="commentCache",allEntries=true)
     public void updateCommentStatus(Integer coid, String status) {
         if (null == coid)
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
@@ -141,7 +138,6 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    @Cacheable(value = "commentCache", key = "'commentById_' + #p0")
     public CommentDomain getCommentById(Integer coid) {
         if (null == coid)
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
@@ -150,7 +146,6 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    @Cacheable(value = "commentCache", key = "'commentsByCId_' + #p0")
     public List<CommentDomain> getCommentsByCId(Integer cid) {
         if (null == cid)
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
@@ -158,7 +153,6 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    @Cacheable(value = "commentCache", key = "'commentsByCond_' + #p1")
     public PageInfo<CommentDomain> getCommentsByCond(CommentCond commentCond, int pageNum, int pageSize) {
         if (null == commentCond)
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);

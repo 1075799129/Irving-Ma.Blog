@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  *  请求日志
- * Created by Donghua.Chen on 2018/4/29.
+ * Created by Irving on 2018/4/29.
  */
 @Service
 public class LogServiceImpl implements LogService {

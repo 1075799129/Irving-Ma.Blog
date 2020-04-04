@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  * 附件服务实现层
- * Created by Donghua.Chen on 2018/4/29.
+ * Created by Irving on 2018/4/29.
  */
 @Service
 public class AttAchServiceImpl implements AttAchService {
@@ -26,7 +26,6 @@ public class AttAchServiceImpl implements AttAchService {
     private AttAchDao attAchDao;
 
     @Override
-    @CacheEvict(value={"attCaches","attCache"},allEntries=true,beforeInvocation=true)
     public void addAttAch(AttAchDomain attAchDomain) {
         if (null == attAchDomain)
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
@@ -35,7 +34,6 @@ public class AttAchServiceImpl implements AttAchService {
     }
 
     @Override
-    @CacheEvict(value={"attCaches","attCache"},allEntries=true,beforeInvocation=true)
     public void batchAddAttAch(List<AttAchDomain> list) {
         if (null == list || list.size() == 0)
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
@@ -44,7 +42,6 @@ public class AttAchServiceImpl implements AttAchService {
     }
 
     @Override
-    @CacheEvict(value={"attCaches","attCache"},allEntries=true,beforeInvocation=true)
     public void deleteAttAch(Integer id) {
         if (null == id)
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
@@ -53,7 +50,6 @@ public class AttAchServiceImpl implements AttAchService {
     }
 
     @Override
-    @CacheEvict(value={"attCaches","attCache"},allEntries=true,beforeInvocation=true)
     public void updateAttAch(AttAchDomain attAchDomain) {
         if (null == attAchDomain || null == attAchDomain.getId())
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
@@ -62,7 +58,6 @@ public class AttAchServiceImpl implements AttAchService {
     }
 
     @Override
-    @Cacheable(value = "attCache", key = "'attAchById' + #p0")
     public AttAchDto getAttAchById(Integer id) {
         if (null == id)
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
@@ -70,7 +65,6 @@ public class AttAchServiceImpl implements AttAchService {
     }
 
     @Override
-    @Cacheable(value = "attCaches", key = "'atts' + #p0")
     public PageInfo<AttAchDto> getAtts(int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         List<AttAchDto> atts = attAchDao.getAtts();

@@ -4,7 +4,7 @@ import cn.irving.model.MetaDomain;
 
 /**
  * 标签、分类列表
- * Created by Donghua.Chen on 2018/4/30.
+ * Created by Irving on 2018/4/30.
  */
 public class MetaDto extends MetaDomain {
 

@@ -2,7 +2,7 @@ package cn.irving.model;
 
 /**
  * 文章实体
- * Created by Donghua.Chen on 2018/4/29.
+ * Created by Irving on 2018/4/29.
  */
 public class ContentDomain {
 

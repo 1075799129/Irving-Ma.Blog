@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 /**
- * Created by Donghua.Chen on 2018/4/20.
+ * Created by Irving on 2018/4/20.
  */
 @Mapper
 public interface UserDao {

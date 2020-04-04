@@ -4,7 +4,7 @@ import cn.irving.model.UserDomain;
 
 import org.springframework.stereotype.Service;
 /**
- * Created by Donghua.Chen on 2018/4/20.
+ * Created by Irving on 2018/4/20.
  */
 @Service
 public interface UserService {

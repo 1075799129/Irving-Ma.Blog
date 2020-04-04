@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * 评论服务层
- * Created by Donghua.Chen on 2018/4/29.
+ * Created by Irving on 2018/4/29.
  */
 public interface CommentService {
 

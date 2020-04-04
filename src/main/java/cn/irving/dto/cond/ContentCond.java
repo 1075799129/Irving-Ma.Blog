@@ -2,7 +2,7 @@ package cn.irving.dto.cond;
 
 /**
  * 文章查询条件
- * Created by Donghua.Chen on 2018/4/29.
+ * Created by Irving on 2018/4/29.
  */
 public class ContentCond {
 

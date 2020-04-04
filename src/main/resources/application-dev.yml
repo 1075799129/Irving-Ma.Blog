@@ -14,7 +14,7 @@ spring:
           #基本属性
           url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
           username: root
-          password: root
+          password: Irving0405*
           #配置初始化大小/最小/最大
           initial-size: 1
           min-idle: 1
@@ -44,7 +44,7 @@ spring:
       proxy-target-class: true
     servlet:
           multipart:
-            max-file-size: 10Mb
+            max-file-size: 20Mb
             max-request-size: 100Mb
 
 
@@ -73,4 +73,4 @@ qiniu:
   serectkey: "EEmMtnK0WbScGHNxuUIkEn6GOAySrapQnF77FsH2"
   bucket: "irvingmablog"
   cdn:
-    url: "q83hogq9f.bkt.clouddn.com/"
+    url: "http://q83hogq9f.bkt.clouddn.com/"

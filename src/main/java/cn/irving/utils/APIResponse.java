@@ -2,7 +2,7 @@ package cn.irving.utils;
 
 /**
  * 返回的参数封装类
- * Created by Donghua.Chen on 2018/4/20.
+ * Created by Irving on 2018/4/20.
  */
 public class APIResponse <T> {
 

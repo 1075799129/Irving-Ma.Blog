@@ -2,7 +2,7 @@ package cn.irving.dto;
 
 /**
  * 后台统计对象
- * Created by Donghua.Chen on 2018/4/30.
+ * Created by Irving on 2018/4/30.
  */
 public class StatisticsDto {
 

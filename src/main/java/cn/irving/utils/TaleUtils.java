@@ -32,7 +32,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by Donghua.Chen on 2018/4/30.
+ * Created by Irving on 2018/4/30.
  */
 public class TaleUtils {
 
@@ -410,7 +410,7 @@ public class TaleUtils {
     }
 
     public static String getFileKey(String name) {
-        String prefix = "/irvingmablog/" + DateKit.dateFormat(new Date(), "yyyy/MM");
+        String prefix = "/images/" + DateKit.dateFormat(new Date(), "yyyy/MM");
         if (!new File(AttAchController.CLASSPATH + prefix).exists()) {
             new File(AttAchController.CLASSPATH + prefix).mkdirs();
         }

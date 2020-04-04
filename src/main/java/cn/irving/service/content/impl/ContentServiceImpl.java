@@ -25,7 +25,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * Created by Donghua.Chen on 2018/4/29.
+ * Created by Irving on 2018/4/29.
  */
 @Service
 public class ContentServiceImpl implements ContentService {
@@ -45,7 +45,6 @@ public class ContentServiceImpl implements ContentService {
 
     @Transactional
     @Override
-    @CacheEvict(value={"atricleCache","atricleCaches"},allEntries=true,beforeInvocation=true)
     public void addArticle(ContentDomain contentDomain) {
         if (null == contentDomain)
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
@@ -71,7 +70,6 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     @Transactional
-    @CacheEvict(value={"atricleCache","atricleCaches"},allEntries=true,beforeInvocation=true)
     public void deleteArticleById(Integer cid) {
         if (null == cid)
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
@@ -93,7 +91,6 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     @Transactional
-    @CacheEvict(value={"atricleCache","atricleCaches"},allEntries=true,beforeInvocation=true)
     public void updateArticleById(ContentDomain contentDomain) {
         //标签和分类
         String tags = contentDomain.getTags();
@@ -109,7 +106,6 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     @Transactional
-    @CacheEvict(value={"atricleCache","atricleCaches"},allEntries=true,beforeInvocation=true)
     public void updateCategory(String ordinal, String newCatefory) {
         ContentCond cond = new ContentCond();
         cond.setCategory(ordinal);
@@ -123,7 +119,6 @@ public class ContentServiceImpl implements ContentService {
 
 
     @Override
-    @CacheEvict(value={"atricleCache","atricleCaches"},allEntries=true,beforeInvocation=true)
     public void updateContentByCid(ContentDomain content) {
         if (null != content && null != content.getCid()) {
             contentDao.updateArticleById(content);
@@ -131,7 +126,6 @@ public class ContentServiceImpl implements ContentService {
     }
 
     @Override
-    @Cacheable(value = "atricleCache", key = "'atricleById_' + #p0")
     public ContentDomain getAtricleById(Integer cid) {
         if (null == cid)
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
@@ -139,7 +133,6 @@ public class ContentServiceImpl implements ContentService {
     }
 
     @Override
-    @Cacheable(value = "atricleCaches", key = "'articlesByCond_' + #p1 + 'type_' + #p0.type")
     public PageInfo<ContentDomain> getArticlesByCond(ContentCond contentCond, int pageNum, int pageSize) {
         if (null == contentCond)
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
@@ -150,7 +143,6 @@ public class ContentServiceImpl implements ContentService {
     }
 
     @Override
-    @Cacheable(value = "atricleCaches", key = "'recentlyArticle_' + #p0")
     public PageInfo<ContentDomain> getRecentlyArticle(int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         List<ContentDomain> recentlyArticle = contentDao.getRecentlyArticle();

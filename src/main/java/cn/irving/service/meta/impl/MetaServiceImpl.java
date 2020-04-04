@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by Donghua.Chen on 2018/4/29.
+ * Created by Irving on 2018/4/29.
  */
 @Service
 public class MetaServiceImpl implements MetaService {
@@ -42,7 +42,6 @@ public class MetaServiceImpl implements MetaService {
 
     @Override
     @Transactional
-    @CacheEvict(value={"metaCaches","metaCache"},allEntries=true,beforeInvocation=true)
     public void addMeta(MetaDomain meta) {
         if (null == meta)
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
@@ -51,7 +50,6 @@ public class MetaServiceImpl implements MetaService {
     }
 
     @Override
-    @CacheEvict(value={"metaCaches","metaCache"},allEntries=true,beforeInvocation=true)
     public void saveMeta(String type, String name, Integer mid) {
         if (StringUtils.isNotBlank(type) && StringUtils.isNotBlank(name)){
             MetaCond metaCond = new MetaCond();
@@ -83,7 +81,6 @@ public class MetaServiceImpl implements MetaService {
 
     @Override
     @Transactional
-    @CacheEvict(value={"metaCaches","metaCache"},allEntries=true,beforeInvocation=true)
     public void addMetas(Integer cid, String names, String type) {
         if (null == cid)
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
@@ -97,7 +94,6 @@ public class MetaServiceImpl implements MetaService {
     }
 
     @Override
-    @CacheEvict(value={"metaCaches","metaCache"},allEntries=true,beforeInvocation=true)
     public void saveOrUpdate(Integer cid, String name, String type) {
         MetaCond metaCond = new MetaCond();
         metaCond.setName(name);
@@ -133,7 +129,6 @@ public class MetaServiceImpl implements MetaService {
 
     @Override
     @Transactional
-    @CacheEvict(value={"metaCaches","metaCache"},allEntries=true,beforeInvocation=true)
     public void deleteMetaById(Integer mid) {
         if (null == mid)
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
@@ -171,7 +166,6 @@ public class MetaServiceImpl implements MetaService {
 
     @Override
     @Transactional
-    @CacheEvict(value={"metaCaches","metaCache"},allEntries=true,beforeInvocation=true)
     public void updateMeta(MetaDomain meta) {
         if (null == meta || null == meta.getMid())
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
@@ -180,7 +174,6 @@ public class MetaServiceImpl implements MetaService {
     }
 
     @Override
-    @Cacheable(value = "metaCache", key = "'metaById_' + #p0")
     public MetaDomain getMetaById(Integer mid) {
         if (null == mid)
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
@@ -188,14 +181,12 @@ public class MetaServiceImpl implements MetaService {
     }
 
     @Override
-    @Cacheable(value = "metaCaches", key = "'metas_' + #p0")
     public List<MetaDomain> getMetas(MetaCond metaCond) {
         return metaDao.getMetasByCond(metaCond);
     }
 
 
     @Override
-    @Cacheable(value = "metaCaches", key = "'metaList_' + #p0")
     public List<MetaDto> getMetaList(String type, String orderby, int limit) {
         if (StringUtils.isNotBlank(type)){
             if (StringUtils.isBlank(orderby)) {

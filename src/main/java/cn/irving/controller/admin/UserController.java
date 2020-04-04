@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Created by Donghua.Chen on 2018/4/20.
+ * Created by Irving on 2018/4/20.
  */
 @Api("用户管理类")
 @Controller

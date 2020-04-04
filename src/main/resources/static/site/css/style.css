@@ -113,8 +113,8 @@ text-shadow:none;
 /*===== Header ===*/
 
 header[role="header"] {
-	padding-top: 80px;
-	padding-bottom: 39px
+	padding-top: 40px;
+	padding-bottom: 20px
 }
 header[role="header"] h1 {
 	padding: 0;
@@ -259,8 +259,8 @@ main[role="main-home-wrapper"] article[role="pge-title-content"] p, main[role="m
 
 footer[role="footer"] {
 	background-color: #FFF;
-	padding-top: 100px;
-	padding-bottom: 77px
+	padding-top: 50px;
+	padding-bottom: 50px
 }
 footer[role="footer"] > h1 a {
 	margin: 0 auto;
@@ -830,4 +830,11 @@ input[type="submit"] {
 .blog-details {
 	max-width: 750px;
 	margin: 0 auto;
+}
+
+.irvinglogo{
+	width: 125px;
+	height: auto;
+	margin-top: -40px;
+	margin-left: -25px;
 }
