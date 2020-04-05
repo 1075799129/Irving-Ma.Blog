@@ -838,3 +838,27 @@ input[type="submit"] {
 	margin-top: -40px;
 	margin-left: -25px;
 }
+
+/*设置背景颜色渐变*/
+body{
+	margin: 0;
+	padding: 0;
+	background-image: linear-gradient(125deg,#E4FFCD,#6DD5FA,#2980B9,#E4FFCD);  background-size: 400%;
+	animation: bganimation 15s infinite;
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 22px;
+}
+
+@keyframes bganimation {
+	0%{
+		background-position: 0 50%;
+	}
+	50%{
+		background-position: 100% 50%;
+	}
+	100%{
+		background-position: 0 50%;
+	}
+}

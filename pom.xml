@@ -159,7 +159,12 @@
 			<artifactId>qiniu-java-sdk</artifactId>
 			<version>7.2.11</version>
 		</dependency>
-
+		<!--阿里云OSS-->
+		<dependency>
+			<groupId>com.aliyun.oss</groupId>
+			<artifactId>aliyun-sdk-oss</artifactId>
+			<version>3.8.0</version>
+		</dependency>
 
 	</dependencies>
 

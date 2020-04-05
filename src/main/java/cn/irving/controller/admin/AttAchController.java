@@ -1,6 +1,6 @@
 package cn.irving.controller.admin;
 
-import cn.irving.api.QiniuCloudService;
+import cn.irving.api.AliyunCloudService;
 import cn.irving.constant.ErrorConstant;
 import cn.irving.constant.Types;
 import cn.irving.constant.WebConst;
@@ -45,7 +45,7 @@ public class AttAchController {
     @Autowired
     private AttAchService attAchService;
     @Autowired
-    private QiniuCloudService qiniuCloudService;
+    private AliyunCloudService aliyunCloudService;
 
 
 
@@ -84,14 +84,14 @@ public class AttAchController {
 
             String fileName = TaleUtils.getFileKey(file.getOriginalFilename()).replaceFirst("/","");
 
-            qiniuCloudService.upload(file, fileName);
+            aliyunCloudService.upload(file, fileName);
             AttAchDomain attAch = new AttAchDomain();
             HttpSession session = request.getSession();
             UserDomain sessionUser = (UserDomain) session.getAttribute(WebConst.LOGIN_SESSION_KEY);
             attAch.setAuthorId(sessionUser.getUid());
             attAch.setFtype(TaleUtils.isImage(file.getInputStream()) ? Types.IMAGE.getType() : Types.FILE.getType());
             attAch.setFname(fileName);
-            attAch.setFkey(qiniuCloudService.QINIU_UPLOAD_SITE + fileName);
+            attAch.setFkey(aliyunCloudService.ALIYUN_UPLOAD_SITE + fileName);
             attAchService.addAttAch(attAch);
             response.getWriter().write( "{\"success\": 1, \"message\":\"上传成功\",\"url\":\"" + attAch.getFkey() + "\"}" );
         } catch (IOException e) {
@@ -124,14 +124,14 @@ public class AttAchController {
 
                 String fileName = TaleUtils.getFileKey(file.getOriginalFilename()).replaceFirst("/","");
 
-                qiniuCloudService.upload(file, fileName);
+                aliyunCloudService.upload(file, fileName);
                 AttAchDomain attAch = new AttAchDomain();
                 HttpSession session = request.getSession();
                 UserDomain sessionUser = (UserDomain) session.getAttribute(WebConst.LOGIN_SESSION_KEY);
                 attAch.setAuthorId(sessionUser.getUid());
                 attAch.setFtype(TaleUtils.isImage(file.getInputStream()) ? Types.IMAGE.getType() : Types.FILE.getType());
                 attAch.setFname(fileName);
-                attAch.setFkey(qiniuCloudService.QINIU_UPLOAD_SITE + fileName);
+                attAch.setFkey(aliyunCloudService.ALIYUN_UPLOAD_SITE + fileName);
                 attAchService.addAttAch(attAch);
             }
             return APIResponse.success();
