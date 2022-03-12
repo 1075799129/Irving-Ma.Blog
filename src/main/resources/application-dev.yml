@@ -1,5 +1,5 @@
 server:
-  port: 9999
+  port: 9001
 
 
 spring:
@@ -12,9 +12,9 @@ spring:
           filters: stat
           driver-class-name: com.mysql.jdbc.Driver
           #基本属性
-          url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+          url: jdbc:mysql://maxiangxiang.com:3306/blog_dev?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
           username: root
-          password: root
+          password: Irving0405*$
           #配置初始化大小/最小/最大
           initial-size: 1
           min-idle: 1
@@ -69,9 +69,9 @@ swagger:
   show: true
 
 aliyun:
-  accesskey: "LTAI4Fnd9Q8amdATwkFdMnEM"
-  serectkey: "l5ZYj2jPm5XzebJ5GhRCF3AuA3v5F1"
+  accesskey: "LTAI4G9YnphuvydUGw8vX2xk"
+  serectkey: "pYWjrN6vcjMvKCsUN1NPsNWxg5ITgi"
   bucket: "irvingfile"
   cdn:
-    url: "https://irvingfile.oss-cn-qingdao.aliyuncs.com/"
-  endPoint: "https://oss-cn-qingdao.aliyuncs.com"
+    url: "https://irvingfile.oss-accelerate.aliyuncs.com/"
+  endPoint: "https://oss-accelerate.aliyuncs.com"

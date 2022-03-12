@@ -29,13 +29,13 @@ public class Swagger2 {
                 .enable(swaggerShow)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.luischen.controller"))
+                .apis(RequestHandlerSelectors.basePackage("cn.irving.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Luis Site Swagger Restful API")
+                .title("Irving Site Swagger Restful API")
                 .description("更多Spring Boot相关文章请关注：https://www.github.com/")
                 .termsOfServiceUrl("https://localhost:9999/")
                 .contact("Irving Ma")

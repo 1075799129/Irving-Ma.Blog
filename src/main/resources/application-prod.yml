@@ -16,9 +16,9 @@ spring:
           filters: stat
           driver-class-name: com.mysql.jdbc.Driver
           #基本属性
-          url: jdbc:mysql://www.maxiangxiang.com:3306/irving_ma_blog?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+          url: jdbc:mysql://maxiangxiang.com:3306/blog_prod?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
           username: root
-          password: Irving0405*
+          password: Irving0405*$
           #配置初始化大小/最小/最大
           initial-size: 1
           min-idle: 1
@@ -54,7 +54,7 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: cn.luischen.model
+  type-aliases-package: cn.irving.model
 
 
 #pagehelper
